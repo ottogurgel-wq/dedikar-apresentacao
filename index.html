@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Dedikar IA · Apresentação institucional">
+<meta property="og:description" content="Consultoria, IA aplicada e sistemas sob medida. Conheça os projetos da Dedikar IA.">
+<meta property="og:image" content="https://apresentacao.dedikaria.com.br/img/og.jpg">
+<meta name="robots" content="noindex">
+<title>Dedikar IA · Apresentação</title>
+<meta name="description" content="Apresentação institucional da Dedikar IA: quem somos, frentes de atuação, soluções, método, produtos e projetos realizados com telas reais.">
+<meta name="theme-color" content="#0b0b10">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a apresentação institucional em formato de página — uma seção por slide, na ordem da apresentação, sobre o fundo interativo do site. Tamanhos de texto acompanham a largura e a altura da tela (desktop, notebook, tablet e celular). */
+:root{
+  color-scheme:dark;
+  --bg:#0b0b10; --card:#12141c; --card-2:#161923; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --fg:#f1efe9; --fg-hi:#f6f4ee; --fg-2:#b4b6c1; --fg-3:#a9abb7; --fg-4:#8e909c; --fg-5:#6f727e;
+  --accent:#38d9ec; --accent-ink:#061015; --accent-soft:rgba(56,217,236,.12); --accent-line:rgba(56,217,236,.35);
+  --warn:#f5b544; --ac2:#7aa2ff; --ac3:#b48cff;
+  --grad:linear-gradient(100deg,#38d9ec 0%,#7aa2ff 35%,#b48cff 55%,#38d9ec 80%);
+  --display:"Cormorant Garamond",Georgia,serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gutter:clamp(18px,6vw,120px);
+  --h2:clamp(32px,min(4.4vw,7.2vh),76px);
+  --txt:clamp(15px,min(1.4vw,2.4vh),21px);
+  --sm:clamp(14px,min(1.15vw,2vh),17px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+img{display:block;max-width:100%}
+a{color:var(--accent);text-decoration:none}
+::selection{background:var(--accent);color:var(--accent-ink)}
+button{font-family:inherit;color:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{text-wrap:balance;margin:0}
+p,ul{margin:0}
+
+.fx-bg{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+.fx-net{z-index:0}.fx-trail{z-index:2;mix-blend-mode:screen}
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.07}
+.deck{position:relative;z-index:1;overflow-x:clip}
+
+/* ===== slide ===== */
+.slide{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(64px,9vh,104px) var(--gutter) clamp(78px,11vh,112px)}
+.slide.alt{background:rgba(14,15,21,.72)}
+.slide.glow-tr{background:radial-gradient(circle at 92% 6%,rgba(16,48,58,.85) 0%,rgba(11,11,16,0) 46%)}
+.slide.glow-bl{background:radial-gradient(circle at 6% 94%,rgba(15,44,53,.85) 0%,rgba(11,11,16,0) 44%)}
+.inner{width:100%;max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(22px,4vh,48px)}
+.foot{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(20px,3.6vh,38px);display:flex;justify-content:space-between;gap:16px;font-family:var(--mono);font-size:12.5px;letter-spacing:2px;color:var(--fg-5);pointer-events:none}
+.eyebrow{font-family:var(--mono);font-size:clamp(11.5px,1vw,14px);letter-spacing:3.5px;color:var(--accent);text-transform:uppercase}
+.h2{font-family:var(--display);font-weight:600;font-size:var(--h2);line-height:1.05;color:var(--fg-hi)}
+.h2 i,.grad{background:var(--grad);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite;font-style:italic;padding-right:.06em}
+@keyframes shine{to{background-position:-250% 0}}
+/* palavras surgindo, como no site */
+.words .w{display:inline-block;transition:opacity .7s,transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
+.js .words:not(.on) .w{opacity:.08;transform:translateY(.35em);filter:blur(6px)}
+/* cartões e telas entram com fade */
+.js .rv{opacity:0;transform:translateY(14px) scale(.985);transition:opacity .8s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .slide.on .rv{opacity:1;transform:none}
+/* brilho que segue o mouse */
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(600px circle at var(--gx,70%) var(--gy,20%),rgba(56,217,236,.08),transparent 60%)}
+@keyframes dkFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ken{0%{transform:scale(1)}100%{transform:scale(1.06) translate(-1%,-1.2%)}}
+.headblock{display:flex;flex-direction:column;gap:clamp(12px,2vh,18px);max-width:1100px;min-width:0}
+.body{font-size:var(--txt);line-height:1.6;color:var(--fg-2)}
+.small{font-size:var(--sm);line-height:1.55;color:var(--fg-3)}
+.label{font-size:clamp(11.5px,.95vw,13px);letter-spacing:2.5px;text-transform:uppercase;color:var(--fg-4)}
+
+.grid{display:grid;gap:clamp(12px,1.3vw,20px)}
+.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{position:relative;background:rgba(18,20,28,.86);border:1px solid var(--line);border-radius:20px;padding:clamp(18px,min(2.2vw,3.4vh),38px);display:flex;flex-direction:column;gap:clamp(10px,1.5vh,18px);min-width:0;transition:border-color .3s,background .3s}
+.card:hover{border-color:var(--accent-line);background:var(--card-2)}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(56,217,236,.1),rgba(56,217,236,0) 62%);opacity:0;transition:opacity .35s}
+.card:hover::before{opacity:1}
+.card.hl{border-color:var(--accent-line);background:linear-gradient(160deg,rgba(19,48,58,.95) 0%,rgba(18,20,28,.9) 60%)}
+.card h3{font-size:clamp(18px,min(1.7vw,2.9vh),27px);font-weight:700;line-height:1.2}
+.card h3.serif{font-family:var(--display);font-weight:600;font-size:clamp(25px,min(2.4vw,4vh),40px);line-height:1.05}
+.ico{width:clamp(42px,3vw,54px);height:clamp(42px,3vw,54px);border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
+.ico.warn{background:rgba(245,181,68,.1);color:var(--warn)}
+.ico svg{width:52%;height:52%}
+.tag{align-self:flex-start;font-family:var(--mono);font-size:12px;letter-spacing:2px;color:var(--accent);background:var(--accent-soft);padding:6px 13px;border-radius:999px;text-transform:uppercase}
+.tag.new{color:var(--accent-ink);background:var(--accent)}
+
+/* 1 capa */
+.cover{justify-content:space-between;gap:clamp(28px,5vh,56px);background:radial-gradient(circle at 82% 22%,rgba(17,52,63,.9) 0%,rgba(11,11,16,0) 50%)}
+.cover-top{display:flex;align-items:center;gap:clamp(14px,2vw,24px)}
+.logo{width:clamp(64px,6vw,108px);aspect-ratio:1;border-radius:22px;background:#ffffff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 12px 40px rgba(56,217,236,.25);flex-shrink:0}
+.logo img{width:100%;height:100%;object-fit:contain}
+.cover h1{font-family:var(--display);font-weight:600;font-size:clamp(68px,min(12.5vw,22vh),210px);line-height:.92;letter-spacing:-2px;color:var(--fg-hi)}
+.cover h1 .ia{background:var(--grad);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite}
+.cover .tagline{font-size:clamp(19px,min(2.4vw,4.2vh),40px);line-height:1.35;color:#c9cad2;max-width:1240px}
+.cover-bot{display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;border-top:1px solid var(--line-2);padding-top:clamp(18px,3vh,28px);font-size:clamp(12px,1vw,15px);letter-spacing:2.5px;text-transform:uppercase;color:var(--fg-4)}
+.hint{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:1.5px;color:var(--fg-4);text-transform:none}
+.hint kbd{border:1px solid var(--line-2);border-radius:6px;padding:2px 8px;color:#c9cad2;font-family:var(--mono)}
+
+/* 2 quem somos */
+.split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,6vw,110px);align-items:center}
+.stat b{display:block;font-family:var(--display);font-size:clamp(40px,min(4.6vw,8vh),76px);font-weight:700;line-height:1;color:var(--fg-hi)}
+.stat span{font-size:clamp(14px,1.35vw,20px);color:var(--fg-4)}
+.stat.hl b{color:var(--accent)}
+
+/* 4 frentes */
+.num{font-family:var(--display);font-size:clamp(44px,min(4.4vw,7.5vh),72px);font-weight:600;line-height:1;color:#235a66}
+.card.hl .num{color:var(--accent)}
+.card ul{padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:var(--sm);color:#dcdde3}
+.card li{display:flex;gap:10px}.card li::before{content:"→";color:var(--accent)}
+
+/* 6 método */
+.step{border-top:4px solid var(--accent)}
+.step .n{font-family:var(--display);font-size:clamp(44px,min(4.4vw,7.5vh),72px);font-weight:700;line-height:1;color:var(--accent)}
+
+/* 7 manifesto */
+.manifesto{background:radial-gradient(900px circle at 78% 30%,rgba(122,162,255,.12),transparent 60%),radial-gradient(700px circle at 12% 85%,rgba(56,217,236,.12),transparent 60%)}
+.manifesto .inner{position:relative}
+.manifesto .inner::before{content:"";position:absolute;left:0;top:-28px;width:120px;height:3px;border-radius:3px;background:var(--grad);background-size:250% 100%;animation:shine 7s linear infinite}
+.manifesto h2{font-family:var(--display);font-weight:600;font-size:clamp(50px,min(8.6vw,15vh),150px);line-height:.98;letter-spacing:-1px;color:var(--fg-hi)}
+.manifesto h2 i{background:var(--grad);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite;padding-right:.06em}
+.manifesto p{font-size:clamp(18px,min(2.3vw,4vh),38px);line-height:1.4;color:var(--fg-2);max-width:1300px}
+
+/* ===== projetos ===== */
+.proj{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,4.5vw,84px);align-items:center}
+.proj-txt{display:flex;flex-direction:column;gap:clamp(12px,2vh,22px);min-width:0}
+.checks{padding:0;list-style:none;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.checks li{display:flex;align-items:flex-start;gap:14px;padding:clamp(9px,1.5vh,15px) 0;border-bottom:1px solid var(--line);font-size:var(--sm);line-height:1.45;color:#dcdde3}
+.checks svg{flex-shrink:0;width:22px;height:22px;color:var(--accent);margin-top:1px}
+.gallery{display:flex;flex-direction:column;gap:12px;min-width:0}
+.g-main{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;text-align:left;border-radius:14px}
+.frame{border-radius:14px;overflow:hidden;background:#0f1118;border:1px solid rgba(255,255,255,.1);box-shadow:0 34px 80px rgba(0,0,0,.55);transition:border-color .3s}
+.g-main:hover .frame{border-color:var(--accent-line)}
+.frame-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px;color:#9a9ca8;white-space:nowrap;overflow:hidden}
+.frame-bar i{width:8px;height:8px;border-radius:50%;background:#3a3d48;flex-shrink:0}
+.frame-bar span{margin-left:8px;overflow:hidden;text-overflow:ellipsis}
+.frame{position:relative}.frame img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left;transform-origin:0 0;animation:ken 16s ease-in-out infinite alternate}
+.g-thumbs{display:flex;gap:10px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.g-thumbs button{flex:0 0 auto;width:clamp(84px,9vw,132px);padding:0;border-radius:9px;overflow:hidden;border:2px solid transparent;background:#0f1118;cursor:pointer;opacity:.55;transition:opacity .2s,border-color .2s}
+.g-thumbs button:hover{opacity:1}
+.g-thumbs button[aria-current="true"]{border-color:var(--accent);opacity:1}
+.g-thumbs img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left}
+.g-cap{font-size:13px;color:var(--fg-4);min-height:1.2em}
+/* site: desktop + celular */
+.devices{position:relative;padding-right:clamp(48px,11%,130px);padding-bottom:clamp(18px,4%,40px)}
+.phone{position:absolute;right:0;bottom:0;width:clamp(96px,24%,220px);padding:0;border:0;background:none;cursor:zoom-in;animation:dkFloat 6s ease-in-out infinite}
+.phone-in{border-radius:clamp(16px,2vw,28px);border:clamp(4px,.5vw,7px) solid #20232e;background:#0f1118;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+.phone img{width:100%;height:auto;aspect-ratio:9/18.5;object-fit:cover;object-position:top}
+
+/* outros projetos com imagem */
+.mini-shot{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);padding:0;background:#0f1118;cursor:zoom-in;display:block;width:100%}
+.mini-shot img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top left}
+
+/* 12 pills */
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pills span{font-size:var(--sm);color:#cfd0d8;border:1px solid rgba(56,217,236,.3);background:rgba(56,217,236,.06);padding:9px 20px;border-radius:999px}
+
+/* sobre */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,112px);align-items:center}
+.portrait{width:100%;max-width:min(420px,52vh);aspect-ratio:520/660;margin:0 auto;border-radius:260px 260px 26px 26px;border:3px solid var(--accent);overflow:hidden;background:#1a1d28}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.about h2{font-family:var(--display);font-weight:600;font-size:clamp(50px,min(6vw,10vh),104px);line-height:1;color:var(--fg-hi)}
+
+/* contato */
+.contact h2{font-family:var(--display);font-weight:600;font-size:clamp(42px,min(5.4vw,9vh),96px);line-height:1;color:var(--fg-hi)}
+.contact h2 i{background:var(--grad);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shine 7s linear infinite;padding-right:.06em}
+.ccard{flex-direction:row;align-items:center;gap:20px;padding:clamp(14px,min(1.7vw,2.6vh),26px) clamp(18px,2vw,34px)}
+.ccard .label{letter-spacing:1px;text-transform:none;font-size:13.5px}
+.ccard b{display:block;font-size:clamp(17px,min(1.8vw,3vh),29px);font-weight:600;color:var(--fg);word-break:break-word}
+.signoff{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(18px,3.4vh,34px);padding-right:180px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--fg-4)}
+.signoff span{display:inline-flex;align-items:center;gap:10px}
+.signoff img{width:26px;height:26px;border-radius:7px;background:#fff}
+
+/* navegação */
+.dots{position:fixed;right:clamp(10px,1.3vw,22px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:7px}
+.dots button{width:11px;height:11px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;padding:0;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.dots button:hover{border-color:var(--accent)}
+.dots button[aria-current="true"]{background:var(--accent);border-color:var(--accent);transform:scale(1.25)}
+.dots.dark button{border-color:rgba(6,16,21,.5)}
+.dots.dark button[aria-current="true"]{background:#061015;border-color:#061015}
+.ctrl{position:fixed;right:clamp(10px,1.3vw,22px);bottom:calc(clamp(14px,2.4vh,26px) + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:6px;padding:5px;border-radius:999px;background:rgba(11,11,16,.8);border:1px solid var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ctrl button{width:40px;height:40px;border-radius:50%;border:0;background:transparent;color:var(--fg);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ctrl button:hover{background:rgba(255,255,255,.08)}
+.ctrl span{font-family:var(--mono);font-size:13px;color:#c9cad2;min-width:62px;text-align:center;font-variant-numeric:tabular-nums}
+
+/* lightbox */
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(5,6,10,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px)}
+.lb-box{position:relative;width:min(1500px,100%);display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb-box img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0f1118}
+.lb-cap{font-size:15px;color:#c9cad2;text-align:center}
+.lb-bar{display:flex;align-items:center;gap:12px}
+.lb-bar button,.x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:#181b25;color:#c9cad2;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lb-bar span{font-family:var(--mono);font-size:13px;color:var(--fg-4);min-width:56px;text-align:center}
+.x{position:absolute;right:0;top:-54px}
+body.lock{overflow:hidden}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,::before,::after{animation:none!important;transition:none!important}.js .words:not(.on) .w,.js .rv{opacity:1!important;transform:none!important;filter:none!important}}
+/* desktop alto: encaixa um slide por tela */
+@media (min-width:1101px) and (min-height:700px){html{scroll-snap-type:y proximity}.slide{scroll-snap-align:start}}
+/* notebook baixo */
+@media (min-width:1101px) and (max-height:820px){
+  .g-thumbs button{width:clamp(72px,7vw,104px)}
+  .checks li{padding:8px 0}
+}
+/* tablet */
+@media (max-width:1100px){
+  .c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c3>.card:last-child:nth-child(odd){grid-column:1/-1}
+  .split,.proj,.about{grid-template-columns:minmax(0,1fr)}
+  .proj .gallery{order:2}
+  .dots{display:none}
+  .slide{min-height:auto;padding-top:clamp(72px,10vh,96px)}
+  .cover,.manifesto{min-height:100svh}
+  .portrait{max-width:340px}
+  :root{--h2:clamp(32px,5.6vw,56px);--txt:clamp(16px,2.1vw,19px);--sm:clamp(14.5px,1.9vw,16.5px)}
+}
+/* celular */
+@media (max-width:640px){
+  :root{--gutter:18px;--h2:clamp(30px,8.6vw,40px);--txt:16px;--sm:15px}
+  .c2,.c3,.c4{grid-template-columns:minmax(0,1fr)}
+  .c3>.card:last-child:nth-child(odd){grid-column:auto}
+  .slide{padding-top:64px;padding-bottom:76px}
+  .cover-top{gap:14px}
+  .hint{display:none}
+  .card{border-radius:16px}
+  .ccard{gap:14px}
+  .devices{padding-right:22%}
+  .phone{width:30%}
+  .ctrl button{width:36px;height:36px}
+  .ctrl span{min-width:52px;font-size:12px}
+  .signoff{position:static;margin-top:28px;padding-right:0;padding-bottom:56px}
+  .contact .foot{display:none}
+  .x{top:-52px}
+}
+</style>
+</head>
+<body>
+
+<div class="glow" aria-hidden="true"></div>
+<canvas class="fx-bg fx-net" data-fx="net" aria-hidden="true"></canvas>
+<canvas class="fx-bg fx-trail" data-fx="trail" aria-hidden="true"></canvas>
+<svg class="grain" aria-hidden="true"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#noise)" fill="#ffffff"/></svg>
+
+<main class="deck" id="deck">
+
+<!-- Capa -->
+<section class="slide cover" id="capa" aria-label="Capa">
+  <div class="cover-top">
+    <div class="logo"><img src="img/logo-dedikar.png" alt="Logo Dedikar IA" width="108" height="108"></div>
+    <span class="eyebrow">Consultoria &amp; IA aplicada</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:clamp(18px,3vh,34px)">
+    <h1>Dedikar <span class="ia">IA</span></h1>
+    <p class="tagline">Sistemas inteligentes para empresas crescerem com eficiência: gestão empresarial e inteligência artificial aplicadas ao seu negócio.</p>
+  </div>
+  <div class="cover-bot">
+    <span>Consultoria · Desenvolvimento sob medida · Agentes de IA</span>
+    <span class="hint">Use <kbd>←</kbd> <kbd>→</kbd> ou role a página</span>
+    <span>Apresentação institucional · 2026</span>
+  </div>
+</section>
+
+<!-- Quem somos -->
+<section class="slide glow-tr" id="quem-somos" aria-label="Quem somos">
+  <div class="inner split">
+    <div class="headblock">
+      <span class="eyebrow">01 — Quem somos</span>
+      <h2 class="h2">Gestão de verdade, potencializada por <i>inteligência artificial</i></h2>
+      <p class="body">A Dedikar IA diagnostica os gargalos que travam a operação e o crescimento da empresa e implementa o sistema que resolve: consultoria, automação, agentes de IA e software sob medida. Começamos pelo negócio, pelos números e pelas pessoas. A tecnologia vem depois.</p>
+    </div>
+    <div class="grid">
+      <div class="card stat"><b>+20 anos</b><span>em gestão empresarial e comercial</span></div>
+      <div class="card stat"><b>MBA</b><span>em Inteligência Artificial para Negócios</span></div>
+      <div class="card stat hl"><b>Brasil</b><span>de Recife para todo o país</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Desafio -->
+<section class="slide alt" id="desafio" aria-label="O desafio">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">02 — O desafio</span><h2 class="h2">O que trava o crescimento das empresas hoje</h2></div>
+    <div class="grid c4">
+      <div class="card"><span class="ico warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></span><h3>Planilhas soltas</h3><p class="small">Dado em vários lugares, retrabalho todo dia e ninguém confia no número.</p></div>
+      <div class="card"><span class="ico warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 6l1-1a4 4 0 0 1 6 6l-1 1M13 18l-1 1a4 4 0 0 1-6-6l1-1"/><path d="M4 4l16 16"/></svg></span><h3>Sistemas isolados</h3><p class="small">Cada área numa ferramenta diferente, sem integração entre elas.</p></div>
+      <div class="card"><span class="ico warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Atendimento que para</h3><p class="small">Lead que chega à noite esfria; cobrança e follow-up dependem de alguém lembrar.</p></div>
+      <div class="card"><span class="ico warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span><h3>Decisão no escuro</h3><p class="small">Os números só aparecem no fechamento do mês, quando já é tarde.</p></div>
+    </div>
+    <p class="body" style="color:#c9cad2">É aqui que a Dedikar entra: <span class="grad">organizar a gestão e colocar a IA para trabalhar a favor dela.</span></p>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Frentes -->
+<section class="slide glow-bl" id="frentes" aria-label="Como atuamos">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">03 — Como atuamos</span><h2 class="h2">Três frentes de atuação</h2></div>
+    <div class="grid c3">
+      <div class="card"><span class="num">01</span><h3 class="serif">Consultoria empresarial</h3><p class="small">Organizamos a casa para crescer com método.</p>
+        <ul><li>Gestão comercial e funil de vendas</li><li>Processos, cargos e atribuições</li><li>Indicadores e metas por área</li><li>Precificação e estrutura financeira</li></ul></div>
+      <div class="card"><span class="num" style="color:#2d7584">02</span><h3 class="serif">Consultoria em IA</h3><p class="small">Mapeamos onde a IA gera retorno e conduzimos a adoção junto com a equipe.</p>
+        <ul><li>Diagnóstico de oportunidades</li><li>Priorização por impacto e retorno</li><li>Escolha de ferramentas e integrações</li><li>Treinamento e acompanhamento</li></ul></div>
+      <div class="card hl"><span class="num">03</span><h3 class="serif">Desenvolvimento sob medida</h3><p class="small" style="color:var(--fg-2)">Ferramentas aplicadas a qualquer negócio, integradas ao que você já usa.</p>
+        <ul><li>Dashboards e BI em tempo real</li><li>CRMs, portais de gestão e sites</li><li>Agentes de IA no WhatsApp</li><li>Automação de processos</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Soluções -->
+<section class="slide alt" id="solucoes" aria-label="O que entregamos">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">04 — O que entregamos</span><h2 class="h2">Soluções aplicadas a qualquer negócio</h2></div>
+    <div class="grid c2">
+      <div class="card"><div style="display:flex;align-items:center;gap:16px"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span><h3>Dashboards e BI em tempo real</h3></div><p class="small">Indicadores de todas as áreas num só painel, com alerta quando uma meta sai da rota.</p></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:16px"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h3>Sistemas e sites sob medida</h3></div><p class="small">CRMs, portais de gestão, precificadores e sites com reserva desenhados para o seu processo.</p></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:16px"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/><path d="M9 11h6M9 14h4"/></svg></span><h3>Assistentes e agentes de IA</h3></div><p class="small">Atendimento 24h no WhatsApp: qualifica leads, agenda, confirma contratos e cobra.</p></div>
+      <div class="card"><div style="display:flex;align-items:center;gap:16px"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Automação de processos</h3></div><p class="small">Prospecção, cadastros, relatórios e follow-ups no automático, sem erro humano.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Método -->
+<section class="slide glow-tr" id="metodo" aria-label="Como funciona">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">05 — Como funciona</span><h2 class="h2">Da conversa ao resultado, com método de gestão</h2></div>
+    <div class="grid c4">
+      <div class="card step"><span class="n">1</span><h3>Diagnóstico</h3><p class="small">Entendemos a operação, os números e onde está o maior ganho com IA.</p></div>
+      <div class="card step" style="border-top-color:#2fb3c3"><span class="n">2</span><h3>Plano de ação</h3><p class="small">Priorizamos por impacto e retorno, com escopo, prazo e investimento claros.</p></div>
+      <div class="card step" style="border-top-color:#268d9a"><span class="n">3</span><h3>Implantação</h3><p class="small">Construímos, integramos aos seus sistemas e treinamos a equipe.</p></div>
+      <div class="card step" style="border-top-color:#1d6772"><span class="n">4</span><h3>Evolução contínua</h3><p class="small">Acompanhamos os indicadores e evoluímos a solução com o crescimento da empresa.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Manifesto -->
+<section class="slide manifesto" id="manifesto" aria-label="Nosso jeito de trabalhar">
+  <div class="inner">
+    <span class="eyebrow">// Nosso jeito de trabalhar</span>
+    <h2>Primeiro o negócio.<br><i>Depois a tecnologia.</i></h2>
+    <p>Ver os números certos, na hora certa, e liberar as pessoas para o trabalho que realmente gera resultado.</p>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Produtos -->
+<section class="slide glow-bl" id="produtos" aria-label="Produtos próprios">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">06 — Produtos próprios</span><h2 class="h2">Produtos já desenvolvidos</h2></div>
+    <div class="grid c3">
+      <div class="card hl"><span class="tag">Plataforma SaaS</span><h3 class="serif">Dedikar CRM</h3><p class="small" style="color:var(--fg-2)">CRM para qualquer segmento: funis e campos configuráveis, WhatsApp integrado, automações e relatórios.</p></div>
+      <div class="card"><span class="tag new">Novo</span><h3 class="serif">Orion</h3><p class="small">Prospecção inteligente: encontra empresas pelo CNPJ, confere no Google Maps e conduz a cadência até virar negócio.</p></div>
+      <div class="card"><span class="tag new">Novo</span><h3 class="serif">Dedikar Fleet</h3><p class="small">Gestão de frota corporativa: contratos anuais, clientes, manutenção, multas e avarias.</p></div>
+      <div class="card"><span class="tag">Gestão integrada</span><h3 class="serif">Portal de Gestão para Locadoras</h3><p class="small">Painel, financeiro, frota, reservas e CRM num login só, com acesso por perfil.</p></div>
+      <div class="card"><span class="tag">Agente de IA</span><h3 class="serif">Agente de Receita</h3><p class="small">Reservas 24h no WhatsApp, follow-up, vistoria por foto e cobrança de avarias e multas.</p></div>
+      <div class="card"><span class="tag">Copiloto de IA</span><h3 class="serif">DP Copiloto</h3><p class="small">IA no departamento pessoal: conferência de ponto, folha e rotinas do eSocial.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: portal de gestão da locadora -->
+<section class="slide alt" id="portal-gestao" aria-label="Projeto: portal de gestão da locadora">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Locadora de veículos · Recife</span>
+      <h2 class="h2">Portal de Gestão da <i>locadora</i></h2>
+      <p class="body">Um login só para a diretoria e cada área abrirem o painel que lhes cabe: financeiro, frota, CRM e site, com a operação em tempo real.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Acesso por perfil: diretoria, financeiro, frota e comercial</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Financeiro com visão geral, fluxo de caixa, DRE e balanço gerencial</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Frota com manutenção, compras, multas e auditoria do sistema da locadora</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>CRM e reservas do site no mesmo portal</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Portal de Gestão">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1600" height="1000"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/portal-inicio.webp" data-cap="Início do portal: cada pessoa vê só os painéis liberados para ela"><img src="img/p/portal-inicio.webp" alt="Tela inicial do Portal de Gestão" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-financeiro.webp" data-cap="Financeiro: visão geral, comparativo entre empresas, saldo projetado e pontos de atenção"><img src="img/p/portal-financeiro.webp" alt="Visão geral do painel financeiro" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-fluxo.webp" data-cap="Financeiro: fluxo de caixa com curva de saldo e horizonte de projeção"><img src="img/p/portal-fluxo.webp" alt="Fluxo de caixa" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-frota-mes.webp" data-cap="Frota: manutenção mês a mês, por tipo de ordem de serviço"><img src="img/p/portal-frota-mes.webp" alt="Manutenção da frota mês a mês" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-frota-manut.webp" data-cap="Frota: indicadores de manutenção, ordens de serviço e custo por sistema do veículo"><img src="img/p/portal-frota-manut.webp" alt="Manutenção da frota" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: CRM da locadora -->
+<section class="slide glow-tr" id="locadora-crm" aria-label="Projeto: CRM da locadora">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Locadora de veículos · Recife</span>
+      <h2 class="h2">CRM e precificador da <i>locadora</i></h2>
+      <p class="body">Vendas, preço e follow-up no mesmo lugar, com o agente de IA atendendo no WhatsApp quando a equipe não está.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Funis de locação diária, mensal, B2B e licitações</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Lead novo recebe mensagem e é qualificado na hora</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Precificador por categoria, temporada e período</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Relatórios de conversão, origem e motivo de perda</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="CRM da locadora">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1356" height="730"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/crm-locadora.webp" data-cap="Início do CRM: receita, vendas, ticket e alertas"><img src="img/p/crm-locadora.webp" alt="Tela inicial do CRM da locadora" loading="lazy"></button>
+        <button type="button" data-src="img/p/crm-locadora-funil.webp" data-cap="Funil de negócios por etapa"><img src="img/p/crm-locadora-funil.webp" alt="Funil de negócios do CRM da locadora" loading="lazy"></button>
+        <button type="button" data-src="img/p/precificador.webp" data-cap="Precificador: cotação com valor final e envio pelo WhatsApp"><img src="img/p/precificador.webp" alt="Precificador de diárias" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: site da locadora -->
+<section class="slide alt" id="locadora-site" aria-label="Projeto: site da locadora">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Locadora de veículos · Recife</span>
+      <h2 class="h2">Site com <i>reserva online</i></h2>
+      <p class="body">O cliente escolhe o carro, vê o valor final antes de pagar e garante a reserva no Pix ou no cartão, do computador ou do celular.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cotação de diária e mensal com preço em tempo real</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Área para empresas e governo</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Reservas caindo direto no CRM e no portal de gestão</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Responsivo para celular, tablet e computador</li>
+      </ul>
+    </div>
+    <div class="devices">
+      <button type="button" class="g-main lb-one" data-src="img/p/site-locadora.webp" data-cap="Site da locadora no computador"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>Site da locadora</span></div><img src="img/p/site-locadora.webp" alt="Página inicial do site da locadora com busca de reserva" width="1600" height="1000" loading="lazy"></div></button>
+      <button type="button" class="phone lb-one" data-src="img/p/site-locadora-m.webp" data-cap="Site da locadora no celular"><div class="phone-in"><img src="img/p/site-locadora-m.webp" alt="Site da locadora no celular" width="640" height="1385" loading="lazy"></div></button>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: site da Dedikar -->
+<section class="slide glow-tr" id="site-dedikar" aria-label="Projeto: site da Dedikar IA">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">dedikaria.com.br</span>
+      <h2 class="h2">Site da <i>Dedikar IA</i></h2>
+      <p class="body">Site que gera diagnóstico agendado: o visitante vê os agentes trabalhando, conhece os projetos e marca a reunião sem sair da página.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Formulário ligado ao CRM e à agenda do Google</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Agentes de IA em ação e projetos tela por tela</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Conversões medidas no Google Ads e no Analytics</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Responsivo para celular, tablet e computador</li>
+      </ul>
+    </div>
+    <div class="devices">
+      <button type="button" class="g-main lb-one" data-src="img/p/site-dedikar.webp" data-cap="Site da Dedikar IA no computador"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span>dedikaria.com.br</span></div><img src="img/p/site-dedikar.webp" alt="Página inicial do site da Dedikar IA" width="1600" height="1000" loading="lazy"></div></button>
+      <button type="button" class="phone lb-one" data-src="img/p/site-dedikar-m.webp" data-cap="Site da Dedikar IA no celular"><div class="phone-in"><img src="img/p/site-dedikar-m.webp" alt="Site da Dedikar IA no celular" width="640" height="1329" loading="lazy"></div></button>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: Dedikar Fleet -->
+<section class="slide alt" id="fleet" aria-label="Projeto: Dedikar Fleet">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Locação corporativa · contratos anuais</span>
+      <h2 class="h2">Dedikar <i>Fleet</i></h2>
+      <p class="body">Plataforma para locadora que trabalha só com contratos anuais para empresas, substituindo as planilhas por uma gestão 100% no sistema.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Receita contratada e concentração por cliente</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Linha do tempo dos contratos, com aviso de vencimento</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Manutenção preventiva e corretiva, com custo por veículo</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Multas e avarias vinculadas ao cliente e ao carro</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Dedikar Fleet">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1440" height="880"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/fleet-painel.webp" data-cap="Painel: receita contratada, ocupação e concentração por cliente"><img src="img/p/fleet-painel.webp" alt="Painel do Dedikar Fleet" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-contratos.webp" data-cap="Clientes e contratos na linha do tempo"><img src="img/p/fleet-contratos.webp" alt="Contratos do Dedikar Fleet" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-manutencao.webp" data-cap="Manutenção preventiva e corretiva"><img src="img/p/fleet-manutencao.webp" alt="Manutenção no Dedikar Fleet" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: Orion -->
+<section class="slide glow-tr" id="orion" aria-label="Projeto: Orion">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Produto Dedikar · prospecção</span>
+      <h2 class="h2">Orion, prospecção <i>inteligente</i></h2>
+      <p class="body">Encontra as empresas certas, confirma quem decide e conduz a conversa até virar negócio no CRM.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>30 empresas novas por dia pela base da Receita Federal</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Conferência no Google Maps e decisor validado no LinkedIn</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cadência por e-mail, WhatsApp e Instagram</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Respostas classificadas por IA, que viram negócio no CRM</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Orion">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1600" height="1000"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/orion-hoje.webp" data-cap="Hoje: metas do dia, funil de prospecção e saúde dos envios"><img src="img/p/orion-hoje.webp" alt="Tela Hoje do Orion" loading="lazy"></button>
+        <button type="button" data-src="img/p/orion-buscar.webp" data-cap="Buscar empresas pela Receita, pelo Google Maps ou por CNPJ"><img src="img/p/orion-buscar.webp" alt="Busca de empresas no Orion" loading="lazy"></button>
+        <button type="button" data-src="img/p/orion-qualificacao.webp" data-cap="Qualificação: validação automática e decisor confirmado"><img src="img/p/orion-qualificacao.webp" alt="Qualificação de empresa no Orion" loading="lazy"></button>
+        <button type="button" data-src="img/p/orion-respostas.webp" data-cap="Respostas de e-mail e WhatsApp numa caixa só, classificadas por IA"><img src="img/p/orion-respostas.webp" alt="Caixa de respostas do Orion" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: Dedikar CRM -->
+<section class="slide alt" id="dedikar-crm" aria-label="Projeto: Dedikar CRM">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Produto Dedikar · plataforma SaaS</span>
+      <h2 class="h2">Dedikar <i>CRM</i></h2>
+      <p class="body">O CRM que a própria Dedikar usa no dia a dia e que é adaptado para cada segmento de cliente.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Funis, campos e permissões configuráveis por empresa</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>WhatsApp dentro da plataforma, com agente de IA</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Automações: lead do site entra, recebe mensagem e vira negócio</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Copiloto que aponta o que precisa de atenção hoje</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Dedikar CRM">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1600" height="1000"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/crm-dedikar.webp" data-cap="Início: receita, funil de conversão e alertas do copiloto"><img src="img/p/crm-dedikar.webp" alt="Tela inicial do Dedikar CRM" loading="lazy"></button>
+        <button type="button" data-src="img/p/crm-dedikar-negocios.webp" data-cap="Quadro de negócios por etapa, com prazo de cada fase"><img src="img/p/crm-dedikar-negocios.webp" alt="Quadro de negócios do Dedikar CRM" loading="lazy"></button>
+        <button type="button" data-src="img/p/crm-dedikar-automacoes.webp" data-cap="Automações do CRM de uso interno da Dedikar"><img src="img/p/crm-dedikar-automacoes.webp" alt="Automações do Dedikar CRM" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: grupo de planos e serviços -->
+<section class="slide glow-tr" id="case-grupo" aria-label="Projeto: grupo de planos e serviços">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="label">Planos e serviços · operação multiárea</span>
+      <h2 class="h2">Grupo de planos e <i>serviços</i></h2>
+      <p class="body">Comercial, pós-venda, RH e DP na mesma tela, com IA reduzindo tarefas manuais e dando visibilidade às lideranças.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Dashboard unificado e monitoramento com alertas</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Pós-venda automatizado com chatbot no WhatsApp</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Radar NR-1 de risco psicossocial para o RH</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>DP Copiloto para folha, ponto e eSocial</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Grupo de planos e serviços">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1600" height="1000"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/grupo-posvenda.webp" data-cap="Pós-venda com bot no WhatsApp e contexto do cliente"><img src="img/p/grupo-posvenda.webp" alt="Conversas de pós-venda no WhatsApp" loading="lazy"></button>
+        <button type="button" data-src="img/p/grupo-radar.webp" data-cap="Radar NR-1: índice de exposição e alertas (dados fictícios)"><img src="img/p/grupo-radar.webp" alt="Radar psicossocial NR-1" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Outros projetos -->
+<section class="slide alt" id="outros-projetos" aria-label="Outros projetos">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">07 — Projetos realizados</span><h2 class="h2">Outros projetos em diferentes segmentos</h2></div>
+    <div class="grid c4">
+      <div class="card"><button type="button" class="mini-shot lb-one" data-src="img/p/pousada.webp" data-cap="Painel financeiro da pousada (valores ocultos)"><img src="img/p/pousada.webp" alt="Painel financeiro da pousada" loading="lazy"></button><span class="label">Hotelaria</span><h3>Pousada</h3><p class="small">Painel financeiro, CRM de reservas e precificador de tarifas por temporada.</p></div>
+      <div class="card"><button type="button" class="mini-shot lb-one" data-src="img/p/flat.webp" data-cap="Painel de aluguel por temporada (dados de exemplo)"><img src="img/p/flat.webp" alt="Painel de aluguel por temporada" loading="lazy"></button><span class="label">Aluguel por temporada</span><h3>Flat na praia</h3><p class="small">Reservas, hóspedes e preços num painel, com o calendário do Airbnb e agente no WhatsApp.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><span class="label">Comercial</span><h3>Painéis de gestão</h3><p class="small">Market share, churn, caixa vendido × faturado e funis de vendas.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span><span class="label">Marketing</span><h3>Crescimento digital</h3><p class="small">Google Ads, perfil no Google e Instagram com publicação automática.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Para quem -->
+<section class="slide glow-bl" id="para-quem" aria-label="Para quem">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">08 — Para quem</span><h2 class="h2">Do pequeno negócio à grande operação</h2></div>
+    <div class="grid c3">
+      <div class="card"><h3 class="serif">Pequenas empresas</h3><p class="small">Organize a casa: painel com os números essenciais, atendimento automático no WhatsApp e fim das planilhas manuais.</p></div>
+      <div class="card" style="border-color:var(--accent-line)"><h3 class="serif">Médias empresas</h3><p class="small">Cresça sem inchar a equipe: sistemas integrados, automação entre áreas e indicadores por setor e gestor.</p></div>
+      <div class="card"><h3 class="serif">Grandes empresas</h3><p class="small">Governança em escala: BI corporativo, agentes de IA por departamento e integração com ERPs.</p></div>
+    </div>
+    <div class="pills"><span>Comercial</span><span>Financeiro</span><span>Operações e frota</span><span>RH e DP</span><span>Atendimento</span><span>Pós-venda</span><span>Diretoria</span></div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Sobre -->
+<section class="slide" id="sobre" aria-label="Quem está por trás" style="background:radial-gradient(circle at 22% 50%,rgba(16,48,58,.85) 0%,rgba(11,11,16,0) 42%)">
+  <div class="inner about">
+    <div class="portrait"><img src="img/otto-gurgel.jpg" alt="Otto Gurgel, fundador da Dedikar IA" width="520" height="660"></div>
+    <div class="headblock">
+      <span class="eyebrow">09 — Quem está por trás</span>
+      <h2>Otto Gurgel</h2>
+      <span class="label" style="font-size:clamp(13px,1.2vw,18px)">Fundador · Consultor em gestão e IA aplicada</span>
+      <p class="body">Administrador de empresas, especialista em gestão empresarial e MBA em Inteligência Artificial para Negócios. São mais de 20 anos liderando operações, equipes comerciais e resultados, hoje dedicados a levar a IA para dentro das empresas de forma prática, mensurável e com os pés no chão.</p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Contato -->
+<section class="slide cover contact" id="contato" aria-label="Contato" style="justify-content:center">
+  <div class="inner split">
+    <div class="headblock">
+      <div class="logo" style="width:clamp(64px,5vw,92px)"><img src="img/logo-dedikar.png" alt="Logo Dedikar IA" width="92" height="92"></div>
+      <h2>Vamos conversar sobre a <i>sua empresa?</i></h2>
+      <p class="body">O próximo passo é um diagnóstico: entendemos a sua operação e mostramos onde a IA gera retorno de verdade.</p>
+    </div>
+    <div class="grid">
+      <div class="card ccard"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span><div><span class="label">Site</span><b>dedikaria.com.br</b></div></div>
+      <div class="card ccard"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><span class="label">E-mail</span><b>contato@dedikaria.com.br</b></div></div>
+      <div class="card ccard"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg></span><div><span class="label">WhatsApp</span><b>(81) 99108-2411</b></div></div>
+      <div class="card ccard"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span><div><span class="label">Instagram</span><b>@dedikar.ia</b></div></div>
+    </div>
+  </div>
+  <div class="signoff">
+    <span><img src="img/logo-dedikar.png" alt="" width="26" height="26">Desenvolvido por Dedikar IA. Todos os direitos reservados.</span>
+    <span>Recife · atendimento em todo o Brasil</span>
+  </div>
+</section>
+
+</main>
+
+<nav class="dots" id="dots" aria-label="Slides"></nav>
+<div class="ctrl" aria-label="Navegação da apresentação">
+  <button type="button" id="prev" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <span id="count">01 / 20</span>
+  <button type="button" id="next" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<div class="overlay" id="lb" hidden>
+  <div class="lb-box" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+    <button type="button" class="x" id="lb-x" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <img id="lb-img" src="img/p/portal-inicio.webp" alt="">
+    <p class="lb-cap" id="lb-cap"></p>
+    <div class="lb-bar" id="lb-bar">
+      <button type="button" id="lb-prev" aria-label="Imagem anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <span id="lb-n"></span>
+      <button type="button" id="lb-next" aria-label="Próxima imagem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* padrão visual do site: palavras surgindo, fade dos blocos e brilho do mouse */
+(function(){
+  document.documentElement.classList.add('js');
+  const heads=document.querySelectorAll('.h2,.cover h1,.manifesto h2,.about h2,.contact h2');
+  heads.forEach(h=>{
+    h.classList.add('words');
+    const out=document.createDocumentFragment();
+    const push=(txt,cls)=>{txt.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){out.appendChild(document.createTextNode(' '));return;}const sp=document.createElement('span');sp.className='w'+(cls?' '+cls:'');sp.textContent=t;out.appendChild(sp);});};
+    [...h.childNodes].forEach(n=>{
+      if(n.nodeType===3) push(n.nodeValue,'');
+      else if(n.nodeName==='BR') out.appendChild(n.cloneNode());
+      else if(n.nodeName==='I') push(n.textContent,'grad');
+      else if(n.nodeName==='SPAN' && h.matches('.cover h1')){const c=n.cloneNode(true);c.classList.add('w');out.appendChild(c);}
+      else push(n.textContent,'');
+    });
+    h.textContent='';h.appendChild(out);
+    h.querySelectorAll('.w').forEach((w,i)=>w.style.transitionDelay=(i*55)+'ms');
+  });
+  document.querySelectorAll('.slide .card,.slide .gallery,.slide .devices,.slide .mini-shot,.portrait,.checks').forEach(el=>{
+    el.classList.add('rv');
+    const sib=[...el.parentElement.children].filter(c=>c.classList.contains('rv'));
+    el.style.transitionDelay=(Math.max(0,sib.indexOf(el))*90)+'ms';
+  });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');e.target.querySelectorAll('.words').forEach(w=>w.classList.add('on'));io.unobserve(e.target);}}),{threshold:.18});
+  document.querySelectorAll('.slide').forEach(s=>io.observe(s));
+  const g=document.querySelector('.glow');
+  addEventListener('pointermove',e=>{g.style.setProperty('--gx',e.clientX+'px');g.style.setProperty('--gy',e.clientY+'px');},{passive:true});
+})();
+
+(function(){
+'use strict';
+var $=function(id){return document.getElementById(id)};
+var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+function pad(n){return (n<10?'0':'')+n}
+
+/* ===== slides: numeração e navegação ===== */
+var slides=[].slice.call(document.querySelectorAll('.slide')), dots=$('dots'), cur=0, total=slides.length;
+slides.forEach(function(s,i){
+  var pg=s.querySelector('.pg'); if(pg) pg.textContent=pad(i+1)+' / '+pad(total);
+  var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Ir para '+(s.getAttribute('aria-label')||('slide '+(i+1))));
+  b.addEventListener('click',function(){go(i)}); dots.appendChild(b);
+});
+function mark(i){
+  cur=i; $('count').textContent=pad(i+1)+' / '+pad(total);
+  [].forEach.call(dots.children,function(b,k){b.setAttribute('aria-current',k===i?'true':'false')});
+  dots.classList.toggle('dark',!!slides[i].dataset.dark);
+}
+function go(i){ i=Math.max(0,Math.min(total-1,i)); slides[i].scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'}); mark(i); }
+$('prev').addEventListener('click',function(){go(current()-1)});
+$('next').addEventListener('click',function(){go(current()+1)});
+function current(){ var mid=innerHeight*0.45, best=0; slides.forEach(function(s,i){ if(s.getBoundingClientRect().top<=mid) best=i; }); return best; }
+var tick=false; addEventListener('scroll',function(){ if(tick)return; tick=true; requestAnimationFrame(function(){ mark(current()); tick=false; }); },{passive:true});
+
+/* ===== galerias ===== */
+var LB={items:[],i:0,title:''};
+document.querySelectorAll('[data-gallery]').forEach(function(g){
+  var main=g.querySelector('.g-main'), img=main.querySelector('img'), bar=main.querySelector('.frame-bar span'), cap=g.querySelector('.g-cap');
+  var th=[].slice.call(g.querySelectorAll('.g-thumbs button')), title=g.dataset.gallery, idx=0;
+  var items=th.map(function(b){return {src:b.dataset.src,cap:b.dataset.cap}});
+  function set(k){ idx=k; img.src=items[k].src; img.alt=title+': '+items[k].cap; bar.textContent=title; cap.textContent=items[k].cap;
+    th.forEach(function(b,j){b.setAttribute('aria-current',j===k?'true':'false')}); }
+  th.forEach(function(b,j){ b.setAttribute('aria-label',items[j].cap); b.addEventListener('click',function(){set(j)}); });
+  if(th.length<2) g.querySelector('.g-thumbs').hidden=true;
+  main.addEventListener('click',function(){ openLb(items,idx,title); });
+  set(0);
+});
+document.querySelectorAll('.lb-one').forEach(function(b){
+  b.addEventListener('click',function(){ openLb([{src:b.dataset.src,cap:b.dataset.cap}],0,''); });
+});
+var lb=$('lb'), lastFocus=null;
+function showLb(){ var it=LB.items[LB.i]; $('lb-img').src=it.src; $('lb-img').alt=it.cap; $('lb-cap').textContent=(LB.title?LB.title+' · ':'')+it.cap;
+  $('lb-n').textContent=(LB.i+1)+' / '+LB.items.length; $('lb-bar').hidden=LB.items.length<2; }
+function openLb(items,i,title){ LB={items:items,i:i,title:title}; showLb(); lastFocus=document.activeElement; lb.hidden=false; document.body.classList.add('lock'); $('lb-x').focus(); }
+function stepLb(d){ LB.i=(LB.i+d+LB.items.length)%LB.items.length; showLb(); }
+function closeLb(){ lb.hidden=true; document.body.classList.remove('lock'); if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+$('lb-x').addEventListener('click',closeLb);
+$('lb-prev').addEventListener('click',function(){stepLb(-1)});
+$('lb-next').addEventListener('click',function(){stepLb(1)});
+lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+
+document.addEventListener('keydown',function(e){
+  if(!lb.hidden){ if(e.key==='Escape')closeLb(); else if(e.key==='ArrowRight')stepLb(1); else if(e.key==='ArrowLeft')stepLb(-1); return; }
+  if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+  if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>=0){e.preventDefault();go(current()+1);}
+  else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>=0){e.preventDefault();go(current()-1);}
+  else if(e.key==='Home'){e.preventDefault();go(0);} else if(e.key==='End'){e.preventDefault();go(total-1);}
+});
+mark(current());
+
+/* brilho dos cards */
+if(fine&&!reduced){
+  document.addEventListener('pointermove',function(e){var g=e.target&&e.target.closest?e.target.closest('.card'):null; if(g){var s=g.getBoundingClientRect();g.style.setProperty('--mx',(e.clientX-s.left)+'px');g.style.setProperty('--my',(e.clientY-s.top)+'px');}},{passive:true});
+}
+
+/* ===== fundo: rede de pontos puxada pelo cursor + rastro do mouse (igual ao site) ===== */
+var CORES=['#38d9ec','#7aa2ff','#8beaf5','#2bb3c6'];
+function rgba(h,a){var n=parseInt(h.slice(1),16);return 'rgba('+(n>>16)+','+((n>>8)&255)+','+(n&255)+','+a+')';}
+var mouse=null, camadas=[];
+document.querySelectorAll('canvas[data-fx]').forEach(function(cv){
+  var ctx=cv.getContext('2d'); if(!ctx)return;
+  var L={tipo:cv.getAttribute('data-fx'),cv:cv,ctx:ctx,pts:[],parts:[],hue:0,W:0,H:0};
+  function tam(){
+    var dpr=Math.min(devicePixelRatio||1,2); L.W=innerWidth; L.H=innerHeight;
+    cv.width=L.W*dpr; cv.height=L.H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(L.tipo==='net'){var n=Math.round(Math.min(110,L.W*L.H/14000)); L.pts=[]; for(var i=0;i<n;i++)L.pts.push({x:Math.random()*L.W,y:Math.random()*L.H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,c:CORES[i%4],r:1.4+Math.random()*1.6});}
+  }
+  tam(); addEventListener('resize',tam); camadas.push(L);
+});
+var trail=camadas.filter(function(L){return L.tipo==='trail'})[0];
+addEventListener('pointermove',function(e){
+  if(e.pointerType&&e.pointerType!=='mouse')return;
+  mouse={x:e.clientX,y:e.clientY};
+  if(trail&&fine&&!reduced){trail.hue=(trail.hue+1)%120; trail.parts.push({x:mouse.x,y:mouse.y,r:10+Math.random()*8,life:1,c:CORES[Math.floor(trail.hue/30)]}); if(trail.parts.length>80)trail.parts.shift();}
+},{passive:true});
+document.addEventListener('pointerleave',function(){mouse=null});
+addEventListener('blur',function(){mouse=null});
+function quadro(){
+  camadas.forEach(function(L){
+    var c=L.ctx; c.clearRect(0,0,L.W,L.H);
+    if(L.tipo==='net'){
+      var P=L.pts, m=mouse;
+      for(var i=0;i<P.length;i++){
+        var a=P[i];
+        if(!reduced){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>L.W)a.vx*=-1;if(a.y<0||a.y>L.H)a.vy*=-1;}
+        if(m){var dx=m.x-a.x,dy=m.y-a.y,d=Math.sqrt(dx*dx+dy*dy); if(d<180){a.x+=dx*.012;a.y+=dy*.012;c.strokeStyle=rgba('#38d9ec',(1-d/180)*.5);c.lineWidth=1;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(m.x,m.y);c.stroke();}}
+        for(var j=i+1;j<P.length;j++){var b=P[j],ex=a.x-b.x,ey=a.y-b.y,e2=Math.sqrt(ex*ex+ey*ey); if(e2<130){c.strokeStyle=rgba('#38d9ec',(1-e2/130)*.16);c.lineWidth=1;c.beginPath();c.moveTo(a.x,a.y);c.lineTo(b.x,b.y);c.stroke();}}
+        c.fillStyle=rgba(a.c,.6); c.beginPath(); c.arc(a.x,a.y,a.r,0,6.2832); c.fill();
+      }
+    }else{
+      L.parts.forEach(function(p){p.life-=.022;p.r+=.9;if(p.life<=0)return;c.fillStyle=rgba(p.c,p.life*.16);c.beginPath();c.arc(p.x,p.y,p.r,0,6.2832);c.fill();});
+      L.parts=L.parts.filter(function(p){return p.life>0});
+    }
+  });
+  requestAnimationFrame(quadro);
+}
+if(camadas.length)requestAnimationFrame(quadro);
+})();
+</script>
+
+</body>
+</html>
