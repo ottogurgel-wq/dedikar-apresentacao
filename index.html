@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta property="og:title" content="Dedikar IA · Apresentação institucional">
 <meta property="og:description" content="Consultoria, IA aplicada e sistemas sob medida. Conheça os projetos da Dedikar IA.">
-<meta property="og:image" content="https://apresentacao.dedikaria.com.br/img/og.jpg">
+<meta property="og:image" content="https://ottogurgel-wq.github.io/dedikar-apresentacao/img/og.jpg">
 <meta name="robots" content="noindex">
 <title>Dedikar IA · Apresentação</title>
 <meta name="description" content="Apresentação institucional da Dedikar IA: quem somos, frentes de atuação, soluções, método, produtos e projetos realizados com telas reais.">
@@ -112,6 +112,24 @@ p,ul{margin:0}
 .card ul{padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:var(--sm);color:#dcdde3}
 .card li{display:flex;gap:10px}.card li::before{content:"→";color:var(--accent)}
 
+/* agentes */
+.agent{flex-direction:row;align-items:flex-start;gap:clamp(12px,1.4vw,20px)}
+.agent img{width:clamp(56px,5vw,84px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:2px solid var(--accent-line);flex-shrink:0;background:#1a1d28}
+.agent .role{font-family:var(--mono);font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.agent h3{margin-top:2px}
+.agent .who{display:flex;flex-direction:column;gap:6px;min-width:0}
+/* locadoras */
+.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.leak{gap:8px}.leak .num{font-size:clamp(30px,min(2.8vw,5vh),46px);color:var(--warn)}
+.leak h3{font-size:clamp(16px,min(1.35vw,2.4vh),21px)}
+.mod{gap:6px;padding:clamp(14px,min(1.4vw,2.2vh),22px)}
+.mod h3{font-size:clamp(15px,min(1.25vw,2.2vh),19px);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mod .tag{font-size:10px;padding:3px 8px;letter-spacing:1.5px}
+#locadoras .inner{gap:clamp(14px,2.2vh,26px)}
+#locadoras .headblock .body{font-size:var(--sm)}
+#locadoras .card{padding:clamp(12px,min(1.2vw,1.8vh),20px)}
+#locadoras .small{font-size:clamp(12.5px,min(1vw,1.7vh),15px);line-height:1.4}
+#agentes .card{padding:clamp(14px,min(1.6vw,2.4vh),26px)}
 /* 6 método */
 .step{border-top:4px solid var(--accent)}
 .step .n{font-family:var(--display);font-size:clamp(44px,min(4.4vw,7.5vh),72px);font-weight:700;line-height:1;color:var(--accent)}
@@ -207,7 +225,7 @@ body.lock{overflow:hidden}
 }
 /* tablet */
 @media (max-width:1100px){
-  .c4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .c4,.c5{grid-template-columns:repeat(2,minmax(0,1fr))}
   .c3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .c3>.card:last-child:nth-child(odd){grid-column:1/-1}
   .split,.proj,.about{grid-template-columns:minmax(0,1fr)}
@@ -221,7 +239,7 @@ body.lock{overflow:hidden}
 /* celular */
 @media (max-width:640px){
   :root{--gutter:18px;--h2:clamp(30px,8.6vw,40px);--txt:16px;--sm:15px}
-  .c2,.c3,.c4{grid-template-columns:minmax(0,1fr)}
+  .c2,.c3,.c4,.c5{grid-template-columns:minmax(0,1fr)}
   .c3>.card:last-child:nth-child(odd){grid-column:auto}
   .slide{padding-top:64px;padding-bottom:76px}
   .cover-top{gap:14px}
@@ -255,10 +273,10 @@ body.lock{overflow:hidden}
   </div>
   <div style="display:flex;flex-direction:column;gap:clamp(18px,3vh,34px)">
     <h1>Dedikar <span class="ia">IA</span></h1>
-    <p class="tagline">Sistemas inteligentes para empresas crescerem com eficiência: gestão empresarial e inteligência artificial aplicadas ao seu negócio.</p>
+    <p class="tagline">Recuperamos a receita que a sua empresa perde todo mês, com sistemas inteligentes, agentes de IA e gestão de verdade.</p>
   </div>
   <div class="cover-bot">
-    <span>Consultoria · Desenvolvimento sob medida · Agentes de IA</span>
+    <span>Consultoria · Sistemas sob medida · Agentes de IA 24h</span>
     <span class="hint">Use <kbd>←</kbd> <kbd>→</kbd> ou role a página</span>
     <span>Apresentação institucional · 2026</span>
   </div>
@@ -329,12 +347,12 @@ body.lock{overflow:hidden}
 <!-- Método -->
 <section class="slide glow-tr" id="metodo" aria-label="Como funciona">
   <div class="inner">
-    <div class="headblock"><span class="eyebrow">05 — Como funciona</span><h2 class="h2">Da conversa ao resultado, com método de gestão</h2></div>
+    <div class="headblock"><span class="eyebrow">05 — Como funciona</span><h2 class="h2">Do diagnóstico à entrega, com a <i>mesma equipe</i></h2></div>
     <div class="grid c4">
-      <div class="card step"><span class="n">1</span><h3>Diagnóstico</h3><p class="small">Entendemos a operação, os números e onde está o maior ganho com IA.</p></div>
-      <div class="card step" style="border-top-color:#2fb3c3"><span class="n">2</span><h3>Plano de ação</h3><p class="small">Priorizamos por impacto e retorno, com escopo, prazo e investimento claros.</p></div>
-      <div class="card step" style="border-top-color:#268d9a"><span class="n">3</span><h3>Implantação</h3><p class="small">Construímos, integramos aos seus sistemas e treinamos a equipe.</p></div>
-      <div class="card step" style="border-top-color:#1d6772"><span class="n">4</span><h3>Evolução contínua</h3><p class="small">Acompanhamos os indicadores e evoluímos a solução com o crescimento da empresa.</p></div>
+      <div class="card step"><span class="n">1</span><h3>Diagnóstico gratuito</h3><p class="small">Uma reunião para mapear onde a operação perde tempo e dinheiro, com o valor em reais.</p></div>
+      <div class="card step" style="border-top-color:#2fb3c3"><span class="n">2</span><h3>Desenho</h3><p class="small">Proposta por escrito com escopo, prazo e investimento. Sem surpresa no meio do caminho.</p></div>
+      <div class="card step" style="border-top-color:#268d9a"><span class="n">3</span><h3>Implementação</h3><p class="small">Sistema, automações e agentes no ar, ligados às ferramentas que a empresa já usa, com a equipe treinada.</p></div>
+      <div class="card step" style="border-top-color:#1d6772"><span class="n">4</span><h3>Acompanhamento</h3><p class="small">Ajustes com o uso do dia a dia e indicadores no painel para medir o ganho mês a mês.</p></div>
     </div>
   </div>
   <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
@@ -350,45 +368,93 @@ body.lock{overflow:hidden}
   <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
 </section>
 
-<!-- Produtos -->
-<section class="slide glow-bl" id="produtos" aria-label="Produtos próprios">
+<!-- Equipe de agentes -->
+<section class="slide glow-bl" id="agentes" aria-label="Equipe de agentes">
   <div class="inner">
-    <div class="headblock"><span class="eyebrow">06 — Produtos próprios</span><h2 class="h2">Produtos já desenvolvidos</h2></div>
+    <div class="headblock"><span class="eyebrow">06 — Agentes de IA · Dedikar Claw</span><h2 class="h2">Na Dedikar, parte da equipe <i>é de agentes</i></h2><p class="body">Cada agente tem uma função, regras claras e um responsável humano. É a mesma estrutura que instalamos na sua empresa, no seu servidor, com os agentes que fizerem sentido para a sua operação.</p></div>
     <div class="grid c3">
-      <div class="card hl"><span class="tag">Plataforma SaaS</span><h3 class="serif">Dedikar CRM</h3><p class="small" style="color:var(--fg-2)">CRM para qualquer segmento: funis e campos configuráveis, WhatsApp integrado, automações e relatórios.</p></div>
-      <div class="card"><span class="tag new">Novo</span><h3 class="serif">Orion</h3><p class="small">Prospecção inteligente: encontra empresas pelo CNPJ, confere no Google Maps e conduz a cadência até virar negócio.</p></div>
-      <div class="card"><span class="tag new">Novo</span><h3 class="serif">Dedikar Fleet</h3><p class="small">Gestão de frota corporativa: contratos anuais, clientes, manutenção, multas e avarias.</p></div>
-      <div class="card"><span class="tag">Gestão integrada</span><h3 class="serif">Portal de Gestão para Locadoras</h3><p class="small">Painel, financeiro, frota, reservas e CRM num login só, com acesso por perfil.</p></div>
-      <div class="card"><span class="tag">Agente de IA</span><h3 class="serif">Agente de Receita</h3><p class="small">Reservas 24h no WhatsApp, follow-up, vistoria por foto e cobrança de avarias e multas.</p></div>
-      <div class="card"><span class="tag">Copiloto de IA</span><h3 class="serif">DP Copiloto</h3><p class="small">IA no departamento pessoal: conferência de ponto, folha e rotinas do eSocial.</p></div>
+      <div class="card agent"><img src="img/p/agente-chefa.webp" alt="Agente Chefa" width="84" height="84" loading="lazy"><div class="who"><span class="role">Agente central</span><h3>Chefa</h3><p class="small">Recebe os pedidos por voz ou texto, distribui para a equipe de agentes e traz o retorno.</p></div></div>
+      <div class="card agent"><img src="img/p/agente-zoe.webp" alt="Agente Zoe" width="84" height="84" loading="lazy"><div class="who"><span class="role">Vendas · SDR</span><h3>Zoe</h3><p class="small">Atende todo lead em 1 minuto no WhatsApp, qualifica e agenda a demonstração.</p></div></div>
+      <div class="card agent"><img src="img/p/agente-vera.webp" alt="Agente Vera" width="84" height="84" loading="lazy"><div class="who"><span class="role">Diagnóstico</span><h3>Vera</h3><p class="small">Diagnostica a empresa e entrega o relatório com nota e plano de 30, 60 e 90 dias.</p></div></div>
+      <div class="card agent"><img src="img/p/agente-olga.webp" alt="Agente Olga" width="84" height="84" loading="lazy"><div class="who"><span class="role">Marketing e agenda</span><h3>Olga</h3><p class="small">Prepara os posts para aprovação, organiza a agenda e cuida dos e-mails.</p></div></div>
+      <div class="card agent"><img src="img/p/agente-orion.webp" alt="Agente Orion" width="84" height="84" loading="lazy"><div class="who"><span class="role">Financeiro e faturamento</span><h3>Orion</h3><p class="small">Acompanha o caixa e as cobranças e avisa o que pede atenção.</p></div></div>
+      <div class="card agent"><img src="img/p/agente-bonitao.webp" alt="Agente Bonitão" width="84" height="84" loading="lazy"><div class="who"><span class="role">Braço direito</span><h3>Bonitão</h3><p class="small">Cuida das tarefas do dia a dia e coordena os subagentes de projetos.</p></div></div>
+    </div>
+    <p class="body" style="color:#c9cad2">Comandados pelo WhatsApp, Telegram, voz ou painel, e ligados ao CRM. <span class="grad">A IA executa; quem decide é o dono.</span></p>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Produtos -->
+<section class="slide glow-tr" id="produtos" aria-label="Produtos próprios">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">07 — Produtos e serviços</span><h2 class="h2">O que já está <i>rodando</i></h2></div>
+    <div class="grid c4">
+      <div class="card hl"><span class="tag">Plataforma SaaS</span><h3 class="serif">Dedikar CRM</h3><p class="small" style="color:var(--fg-2)">CRM conversacional para qualquer segmento: funis, WhatsApp, agentes 24h, precificador e relatórios.</p></div>
+      <div class="card"><span class="tag">Prospecção</span><h3 class="serif">Orion</h3><p class="small">Empresas novas todo dia, decisor apontado e cadência por e-mail, WhatsApp, Instagram e LinkedIn.</p></div>
+      <div class="card"><span class="tag new">Novo</span><h3 class="serif">Dedikar Claw</h3><p class="small">Equipe de agentes de IA instalada no servidor da empresa, comandada por voz, WhatsApp e Telegram.</p></div>
+      <div class="card"><span class="tag">Locadoras</span><h3 class="serif">Receita Recuperada</h3><p class="small">Atendimento 24h, CRM, site de reservas, vistoria digital e cobrança automática para locadoras.</p></div>
+      <div class="card"><span class="tag">Locadoras</span><h3 class="serif">Dedikar Fleet</h3><p class="small">Sistema de gestão da locadora: reservas, contratos, frota, comercial e financeiro conversando entre si.</p></div>
+      <div class="card"><span class="tag">Locação B2B</span><h3 class="serif">Frota Corporativa</h3><p class="small">Contratos anuais com empresas: clientes, carros, vencimentos, manutenção e multas sem planilha.</p></div>
+      <div class="card"><span class="tag">Painéis</span><h3 class="serif">Gestão e financeiro</h3><p class="small">Caixa projetado, DRE, frota e auditoria cruzando os relatórios do sistema que a empresa já usa.</p></div>
+      <div class="card"><span class="tag">Módulo</span><h3 class="serif">Agendamento automático</h3><p class="small">O lead escolhe o dia, recebe o convite com Meet, boas-vindas e lembretes; o vendedor recebe o resumo.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+
+<!-- Locadoras: Receita Recuperada -->
+<section class="slide alt" id="locadoras" aria-label="Solução para locadoras">
+  <div class="inner">
+    <div class="headblock"><span class="eyebrow">08 — Locadoras de carros e motos</span><h2 class="h2">A receita que escapa todo mês, <i>de volta ao caixa</i></h2><p class="body">Os cinco vazamentos de quase toda locadora. Nenhum aparece no extrato, por isso ninguém mede. No diagnóstico, fazemos a conta em reais.</p></div>
+    <div class="grid c5">
+      <div class="card leak"><span class="num">01</span><h3>Reserva sem resposta</h3><p class="small">O cliente pergunta à noite ou no fim de semana e aluga com o concorrente.</p></div>
+      <div class="card leak"><span class="num">02</span><h3>Multa não repassada</h3><p class="small">O prazo de indicação do condutor passa e a multa fica para a locadora.</p></div>
+      <div class="card leak"><span class="num">03</span><h3>Avaria sem prova</h3><p class="small">Sem vistoria com foto, o arranhão novo vira discussão e não é cobrado.</p></div>
+      <div class="card leak"><span class="num">04</span><h3>Diária atrasada</h3><p class="small">Cobrança na memória e no WhatsApp pessoal: o atraso cresce e parte não volta.</p></div>
+      <div class="card leak"><span class="num">05</span><h3>Carro parado</h3><p class="small">Carro no pátio sem ninguém ver e a mesma diária na baixa e na alta temporada.</p></div>
+    </div>
+    <div class="grid c4">
+      <div class="card mod"><h3>Atendimento e reservas 24h</h3><p class="small">Agente de IA no WhatsApp da locadora: cota, reserva e passa para a equipe.</p></div>
+      <div class="card mod"><h3>Site de reservas</h3><p class="small">Preço calculado na hora e pagamento por Pix ou cartão.</p></div>
+      <div class="card mod"><h3>CRM da locadora</h3><p class="small">Funil, precificador com tarifário e alçada de desconto, cotação em PDF.</p></div>
+      <div class="card mod"><h3>Painel de frota e auditoria</h3><p class="small">Ocupação, manutenção, compras e multas, com alerta do que não bate.</p></div>
+      <div class="card mod"><h3>Rentabilidade por carro</h3><p class="small">FIPE, faturamento, manutenção e depreciação: vender, avaliar ou manter.</p></div>
+      <div class="card mod"><h3>Financeiro e comercial</h3><p class="small">Caixa, contas, fluxo projetado, DRE e balanço, consolidando empresas.</p></div>
+      <div class="card mod"><h3>Vistoria digital <span class="tag new">Novo</span></h3><p class="small">Fotos guiadas na retirada e na devolução, laudo conferido no WhatsApp.</p></div>
+      <div class="card mod"><h3>Cobrança automática <span class="tag new">Novo</span></h3><p class="small">Lembretes com Pix, repasse de multas e confirmação sozinha do pagamento.</p></div>
     </div>
   </div>
   <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
 </section>
 
 <!-- Projeto: portal de gestão da locadora -->
-<section class="slide alt" id="portal-gestao" aria-label="Projeto: portal de gestão da locadora">
+<section class="slide glow-tr" id="portal-gestao" aria-label="Projeto: plataforma de gestão da locadora">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
-      <span class="label">Locadora de veículos · Recife</span>
-      <h2 class="h2">Portal de Gestão da <i>locadora</i></h2>
-      <p class="body">Um login só para a diretoria e cada área abrirem o painel que lhes cabe: financeiro, frota, CRM e site, com a operação em tempo real.</p>
+      <span class="eyebrow">09 — Projetos realizados</span>
+      <span class="label">Locadora de veículos · em operação</span>
+      <h2 class="h2">Plataforma de gestão da <i>locadora</i></h2>
+      <p class="body">Não é protótipo: roda hoje numa locadora com duas empresas. Um login só, e cada pessoa vê os painéis liberados para ela.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Acesso por perfil: diretoria, financeiro, frota e comercial</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Financeiro com visão geral, fluxo de caixa, DRE e balanço gerencial</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Frota com manutenção, compras, multas e auditoria do sistema da locadora</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>CRM e reservas do site no mesmo portal</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Financeiro consolidado: caixa, fluxo projetado, DRE e balanço</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Frota auditada contra o sistema que a locadora já tinha</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Rentabilidade por carro, com indicação de vender, avaliar ou manter</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Comercial e pedidos do site de reservas no mesmo lugar</li>
       </ul>
     </div>
-    <div class="gallery" data-gallery="Portal de Gestão">
-      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1600" height="1000"></div></button>
+    <div class="gallery" data-gallery="Plataforma de gestão">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1412" height="840"></div></button>
       <div class="g-thumbs">
-        <button type="button" data-src="img/p/portal-inicio.webp" data-cap="Início do portal: cada pessoa vê só os painéis liberados para ela"><img src="img/p/portal-inicio.webp" alt="Tela inicial do Portal de Gestão" loading="lazy"></button>
-        <button type="button" data-src="img/p/portal-financeiro.webp" data-cap="Financeiro: visão geral, comparativo entre empresas, saldo projetado e pontos de atenção"><img src="img/p/portal-financeiro.webp" alt="Visão geral do painel financeiro" loading="lazy"></button>
-        <button type="button" data-src="img/p/portal-fluxo.webp" data-cap="Financeiro: fluxo de caixa com curva de saldo e horizonte de projeção"><img src="img/p/portal-fluxo.webp" alt="Fluxo de caixa" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-inicio.webp" data-cap="Início: cada pessoa vê só os painéis liberados para ela"><img src="img/p/portal-inicio.webp" alt="Início da plataforma" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-financeiro.webp" data-cap="Financeiro: visão geral, comparativo entre empresas e saldo projetado"><img src="img/p/portal-financeiro.webp" alt="Visão geral do financeiro" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-fluxo.webp" data-cap="Fluxo de caixa projetado"><img src="img/p/portal-fluxo.webp" alt="Fluxo de caixa" loading="lazy"></button>
         <button type="button" data-src="img/p/portal-frota-mes.webp" data-cap="Frota: manutenção mês a mês, por tipo de ordem de serviço"><img src="img/p/portal-frota-mes.webp" alt="Manutenção da frota mês a mês" loading="lazy"></button>
-        <button type="button" data-src="img/p/portal-frota-manut.webp" data-cap="Frota: indicadores de manutenção, ordens de serviço e custo por sistema do veículo"><img src="img/p/portal-frota-manut.webp" alt="Manutenção da frota" loading="lazy"></button>
+        <button type="button" data-src="img/p/portal-frota-manut.webp" data-cap="Frota: indicadores de manutenção, ordens de serviço e custo por sistema"><img src="img/p/portal-frota-manut.webp" alt="Manutenção da frota" loading="lazy"></button>
+        <button type="button" data-src="img/p/loc-rentab.webp" data-cap="Rentabilidade por carro: compra, FIPE, faturamento, manutenção e depreciação"><img src="img/p/loc-rentab.webp" alt="Rentabilidade por carro" loading="lazy"></button>
+        <button type="button" data-src="img/p/loc-comercial.webp" data-cap="Comercial: faturamento por empresa, clientes e funil"><img src="img/p/loc-comercial.webp" alt="Painel comercial" loading="lazy"></button>
+        <button type="button" data-src="img/p/loc-site-pedidos.webp" data-cap="Site: pedidos de reserva e regras gerenciados pela locadora"><img src="img/p/loc-site-pedidos.webp" alt="Pedidos do site" loading="lazy"></button>
       </div>
       <p class="g-cap"></p>
     </div>
@@ -397,26 +463,28 @@ body.lock{overflow:hidden}
 </section>
 
 <!-- Projeto: CRM da locadora -->
-<section class="slide glow-tr" id="locadora-crm" aria-label="Projeto: CRM da locadora">
+<section class="slide alt" id="locadora-crm" aria-label="Projeto: CRM da locadora">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
-      <span class="label">Locadora de veículos · Recife</span>
-      <h2 class="h2">CRM e precificador da <i>locadora</i></h2>
-      <p class="body">Vendas, preço e follow-up no mesmo lugar, com o agente de IA atendendo no WhatsApp quando a equipe não está.</p>
+      <span class="eyebrow">09 — Projetos realizados</span>
+      <span class="label">Locadora de veículos · em operação</span>
+      <h2 class="h2">Do lead à reserva paga, <i>no mesmo lugar</i></h2>
+      <p class="body">O CRM da locadora com atendimento automático no WhatsApp: ninguém fica sem resposta, nem de madrugada.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Funis de locação diária, mensal, B2B e licitações</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Lead novo recebe mensagem e é qualificado na hora</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Precificador por categoria, temporada e período</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Relatórios de conversão, origem e motivo de perda</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Funis de diária, mensal, empresas e governo</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Precificador com tarifário, temporada e alçada de desconto</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cotação em PDF pelo WhatsApp, follow-up e link de pagamento</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Conversões devolvidas ao Google Ads</li>
       </ul>
     </div>
     <div class="gallery" data-gallery="CRM da locadora">
-      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1356" height="730"></div></button>
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1412" height="840"></div></button>
       <div class="g-thumbs">
-        <button type="button" data-src="img/p/crm-locadora.webp" data-cap="Início do CRM: receita, vendas, ticket e alertas"><img src="img/p/crm-locadora.webp" alt="Tela inicial do CRM da locadora" loading="lazy"></button>
-        <button type="button" data-src="img/p/crm-locadora-funil.webp" data-cap="Funil de negócios por etapa"><img src="img/p/crm-locadora-funil.webp" alt="Funil de negócios do CRM da locadora" loading="lazy"></button>
-        <button type="button" data-src="img/p/precificador.webp" data-cap="Precificador: cotação com valor final e envio pelo WhatsApp"><img src="img/p/precificador.webp" alt="Precificador de diárias" loading="lazy"></button>
+        <button type="button" data-src="img/p/crm-painel.webp" data-cap="Início: receita fechada, leads novos e o que precisa de ação agora"><img src="img/p/crm-painel.webp" alt="Início do CRM da locadora" loading="lazy"></button>
+        <button type="button" data-src="img/p/crm-funil.webp" data-cap="Funil de reservas e contratos, com prazo de cada etapa"><img src="img/p/crm-funil.webp" alt="Funil do CRM da locadora" loading="lazy"></button>
+        <button type="button" data-src="img/p/precificador.webp" data-cap="Precificador: cotação com valor final e envio pelo WhatsApp"><img src="img/p/precificador.webp" alt="Precificador" loading="lazy"></button>
+        <button type="button" data-src="img/p/loc-crm-automacoes.webp" data-cap="Automações: atendimento no WhatsApp, e-mails e follow-up da cotação"><img src="img/p/loc-crm-automacoes.webp" alt="Automações do CRM" loading="lazy"></button>
+        <button type="button" data-src="img/p/loc-crm-integracoes.webp" data-cap="Integrações: WhatsApp, e-mail, Google Ads e pagamento"><img src="img/p/loc-crm-integracoes.webp" alt="Integrações do CRM" loading="lazy"></button>
       </div>
       <p class="g-cap"></p>
     </div>
@@ -425,16 +493,16 @@ body.lock{overflow:hidden}
 </section>
 
 <!-- Projeto: site da locadora -->
-<section class="slide alt" id="locadora-site" aria-label="Projeto: site da locadora">
+<section class="slide glow-bl" id="locadora-site" aria-label="Projeto: site da locadora">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
-      <span class="label">Locadora de veículos · Recife</span>
-      <h2 class="h2">Site com <i>reserva online</i></h2>
-      <p class="body">O cliente escolhe o carro, vê o valor final antes de pagar e garante a reserva no Pix ou no cartão, do computador ou do celular.</p>
+      <span class="eyebrow">09 — Projetos realizados</span>
+      <span class="label">Locadora de veículos · em operação</span>
+      <h2 class="h2">Um site que <i>reserva sozinho</i></h2>
+      <p class="body">Reserva em quatro passos (local e datas, carro, proteção e pagamento) com o valor final atualizado a cada escolha, a qualquer hora do dia.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cotação de diária e mensal com preço em tempo real</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Área para empresas e governo</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Diária, mensal e empresas com preço em tempo real e Pix ou cartão</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>A locadora troca fotos, regras e locais pelo próprio painel</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Reservas caindo direto no CRM e no portal de gestão</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Responsivo para celular, tablet e computador</li>
       </ul>
@@ -451,12 +519,12 @@ body.lock{overflow:hidden}
 <section class="slide glow-tr" id="site-dedikar" aria-label="Projeto: site da Dedikar IA">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="eyebrow">09 — Projetos realizados</span>
       <span class="label">dedikaria.com.br</span>
       <h2 class="h2">Site da <i>Dedikar IA</i></h2>
-      <p class="body">Site que gera diagnóstico agendado: o visitante vê os agentes trabalhando, conhece os projetos e marca a reunião sem sair da página.</p>
+      <p class="body">Site que gera diagnóstico agendado: o visitante vê os agentes trabalhando, conhece os projetos tela por tela e escolhe o dia da reunião.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Formulário ligado ao CRM e à agenda do Google</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Agendamento automático: convite com Meet, boas-vindas e lembretes</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Agentes de IA em ação e projetos tela por tela</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Conversões medidas no Google Ads e no Analytics</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Responsivo para celular, tablet e computador</li>
@@ -474,9 +542,38 @@ body.lock{overflow:hidden}
 <section class="slide alt" id="fleet" aria-label="Projeto: Dedikar Fleet">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
-      <span class="label">Locação corporativa · contratos anuais</span>
+      <span class="eyebrow">09 — Projetos realizados</span>
+      <span class="label">Produto Dedikar · protótipo funcional</span>
       <h2 class="h2">Dedikar <i>Fleet</i></h2>
+      <p class="body">A locadora inteira em um sistema: reservas, contratos, frota, comercial e financeiro conversando entre si, com acesso por perfil e segundo fator de login.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Agenda do dia: retiradas, devoluções e o que pede atenção</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Mapa de reservas por veículo: carro parado e conflito aparecem na hora</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Funil comercial integrado às reservas</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Dashboards financeiros por empresa e consolidados</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Dedikar Fleet">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1440" height="880"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/fleet-dia.webp" data-cap="Painel do dia: retiradas, devoluções, atrasos, cobranças e oficina (dados fictícios)"><img src="img/p/fleet-dia.webp" alt="Painel do Dedikar Fleet" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-mapa-reservas.webp" data-cap="Mapa de reservas por veículo (dados fictícios)"><img src="img/p/fleet-mapa-reservas.webp" alt="Mapa de reservas" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-crm.webp" data-cap="Funil comercial integrado às reservas (dados fictícios)"><img src="img/p/fleet-crm.webp" alt="CRM do Fleet" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-dashboards.webp" data-cap="Dashboards financeiros por empresa e consolidados (dados fictícios)"><img src="img/p/fleet-dashboards.webp" alt="Dashboards do Fleet" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: Frota corporativa -->
+<section class="slide glow-bl" id="frota-corporativa" aria-label="Projeto: Frota corporativa">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">09 — Projetos realizados</span>
+      <span class="label">Locação corporativa · contratos anuais</span>
+      <h2 class="h2">Frota <i>corporativa</i></h2>
       <p class="body">Plataforma para locadora que trabalha só com contratos anuais para empresas, substituindo as planilhas por uma gestão 100% no sistema.</p>
       <ul class="checks">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Receita contratada e concentração por cliente</li>
@@ -485,12 +582,12 @@ body.lock{overflow:hidden}
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Multas e avarias vinculadas ao cliente e ao carro</li>
       </ul>
     </div>
-    <div class="gallery" data-gallery="Dedikar Fleet">
+    <div class="gallery" data-gallery="Frota corporativa">
       <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1440" height="880"></div></button>
       <div class="g-thumbs">
-        <button type="button" data-src="img/p/fleet-painel.webp" data-cap="Painel: receita contratada, ocupação e concentração por cliente"><img src="img/p/fleet-painel.webp" alt="Painel do Dedikar Fleet" loading="lazy"></button>
-        <button type="button" data-src="img/p/fleet-contratos.webp" data-cap="Clientes e contratos na linha do tempo"><img src="img/p/fleet-contratos.webp" alt="Contratos do Dedikar Fleet" loading="lazy"></button>
-        <button type="button" data-src="img/p/fleet-manutencao.webp" data-cap="Manutenção preventiva e corretiva"><img src="img/p/fleet-manutencao.webp" alt="Manutenção no Dedikar Fleet" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-painel.webp" data-cap="Painel: receita contratada, ocupação e concentração por cliente"><img src="img/p/fleet-painel.webp" alt="Painel da frota corporativa" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-contratos.webp" data-cap="Clientes e contratos na linha do tempo"><img src="img/p/fleet-contratos.webp" alt="Contratos da frota corporativa" loading="lazy"></button>
+        <button type="button" data-src="img/p/fleet-manutencao.webp" data-cap="Manutenção preventiva e corretiva"><img src="img/p/fleet-manutencao.webp" alt="Manutenção da frota corporativa" loading="lazy"></button>
       </div>
       <p class="g-cap"></p>
     </div>
@@ -502,14 +599,14 @@ body.lock{overflow:hidden}
 <section class="slide glow-tr" id="orion" aria-label="Projeto: Orion">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="eyebrow">09 — Projetos realizados</span>
       <span class="label">Produto Dedikar · prospecção</span>
       <h2 class="h2">Orion, prospecção <i>inteligente</i></h2>
       <p class="body">Encontra as empresas certas, confirma quem decide e conduz a conversa até virar negócio no CRM.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>30 empresas novas por dia pela base da Receita Federal</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Empresas novas todo dia pela base da Receita, em qualquer estado e segmento</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Conferência no Google Maps e decisor validado no LinkedIn</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cadência por e-mail, WhatsApp e Instagram</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cadência por e-mail, WhatsApp, Instagram e LinkedIn, falando com os sócios</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Respostas classificadas por IA, que viram negócio no CRM</li>
       </ul>
     </div>
@@ -531,23 +628,52 @@ body.lock{overflow:hidden}
 <section class="slide alt" id="dedikar-crm" aria-label="Projeto: Dedikar CRM">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="eyebrow">09 — Projetos realizados</span>
       <span class="label">Produto Dedikar · plataforma SaaS</span>
-      <h2 class="h2">Dedikar <i>CRM</i></h2>
-      <p class="body">O CRM que a própria Dedikar usa no dia a dia e que é adaptado para cada segmento de cliente.</p>
+      <h2 class="h2">Dedikar CRM, agora <i>conversacional</i></h2>
+      <p class="body">O CRM que a própria Dedikar usa e que é montado para o processo de cada cliente: vendas, preço e follow-up no mesmo lugar, com agentes atendendo 24h.</p>
       <ul class="checks">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Funis, campos e permissões configuráveis por empresa</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>WhatsApp dentro da plataforma, com agente de IA</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Automações: lead do site entra, recebe mensagem e vira negócio</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Copiloto que aponta o que precisa de atenção hoje</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Agentes no WhatsApp, Instagram e Telegram que qualificam, agendam e passam para um humano</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Resumo automático da conversa no card do negócio</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Precificador padronizado entre vendedores e relatórios em tempo real</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Assistente do CRM por áudio no WhatsApp e agentes conectados ao CRM</li>
       </ul>
     </div>
     <div class="gallery" data-gallery="Dedikar CRM">
-      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1600" height="1000"></div></button>
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1356" height="750"></div></button>
       <div class="g-thumbs">
         <button type="button" data-src="img/p/crm-dedikar.webp" data-cap="Início: receita, funil de conversão e alertas do copiloto"><img src="img/p/crm-dedikar.webp" alt="Tela inicial do Dedikar CRM" loading="lazy"></button>
         <button type="button" data-src="img/p/crm-dedikar-negocios.webp" data-cap="Quadro de negócios por etapa, com prazo de cada fase"><img src="img/p/crm-dedikar-negocios.webp" alt="Quadro de negócios do Dedikar CRM" loading="lazy"></button>
+        <button type="button" data-src="img/p/crm-relatorios.webp" data-cap="Relatórios: leads, ganhos, conversão, ticket e ciclo de venda"><img src="img/p/crm-relatorios.webp" alt="Relatórios do Dedikar CRM" loading="lazy"></button>
         <button type="button" data-src="img/p/crm-dedikar-automacoes.webp" data-cap="Automações do CRM de uso interno da Dedikar"><img src="img/p/crm-dedikar-automacoes.webp" alt="Automações do Dedikar CRM" loading="lazy"></button>
+      </div>
+      <p class="g-cap"></p>
+    </div>
+  </div>
+  <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
+</section>
+
+<!-- Projeto: pousada -->
+<section class="slide glow-bl" id="pousada" aria-label="Projeto: pousada">
+  <div class="inner proj">
+    <div class="proj-txt">
+      <span class="eyebrow">09 — Projetos realizados</span>
+      <span class="label">Hotelaria · pousada em operação</span>
+      <h2 class="h2">Financeiro e CRM da <i>pousada</i></h2>
+      <p class="body">A pousada usava três sistemas que mexiam em reserva e não tinha projeção de caixa confiável. O painel separou o que entrou no caixa do que já é receita.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Receita x caixa por mês: adiantamento de hóspede não vira lucro antes da hora</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Ocupação, diária média, RevPAR e vendas por canal</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Auditoria entre maquininha, banco e reservas</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>CRM com funis de reserva direta, agências, eventos e corporativo, e precificador de diárias</li>
+      </ul>
+    </div>
+    <div class="gallery" data-gallery="Pousada">
+      <button type="button" class="g-main"><div class="frame"><div class="frame-bar"><i></i><i></i><i></i><span></span></div><img alt="" width="1440" height="880"></div></button>
+      <div class="g-thumbs">
+        <button type="button" data-src="img/p/pousada-geral.webp" data-cap="Visão geral: receita x caixa por mês (valores ocultos)"><img src="img/p/pousada-geral.webp" alt="Visão geral do financeiro da pousada" loading="lazy"></button>
+        <button type="button" data-src="img/p/pousada-ocup.webp" data-cap="Ocupação, diária média e RevPAR (valores ocultos)"><img src="img/p/pousada-ocup.webp" alt="Ocupação da pousada" loading="lazy"></button>
+        <button type="button" data-src="img/p/pousada.webp" data-cap="Painel financeiro da pousada (valores ocultos)"><img src="img/p/pousada.webp" alt="Painel financeiro da pousada" loading="lazy"></button>
       </div>
       <p class="g-cap"></p>
     </div>
@@ -559,7 +685,7 @@ body.lock{overflow:hidden}
 <section class="slide glow-tr" id="case-grupo" aria-label="Projeto: grupo de planos e serviços">
   <div class="inner proj">
     <div class="proj-txt">
-      <span class="eyebrow">07 — Projetos realizados</span>
+      <span class="eyebrow">09 — Projetos realizados</span>
       <span class="label">Planos e serviços · operação multiárea</span>
       <h2 class="h2">Grupo de planos e <i>serviços</i></h2>
       <p class="body">Comercial, pós-venda, RH e DP na mesma tela, com IA reduzindo tarefas manuais e dando visibilidade às lideranças.</p>
@@ -585,12 +711,12 @@ body.lock{overflow:hidden}
 <!-- Outros projetos -->
 <section class="slide alt" id="outros-projetos" aria-label="Outros projetos">
   <div class="inner">
-    <div class="headblock"><span class="eyebrow">07 — Projetos realizados</span><h2 class="h2">Outros projetos em diferentes segmentos</h2></div>
+    <div class="headblock"><span class="eyebrow">09 — Projetos realizados</span><h2 class="h2">Outros projetos em diferentes segmentos</h2></div>
     <div class="grid c4">
-      <div class="card"><button type="button" class="mini-shot lb-one" data-src="img/p/pousada.webp" data-cap="Painel financeiro da pousada (valores ocultos)"><img src="img/p/pousada.webp" alt="Painel financeiro da pousada" loading="lazy"></button><span class="label">Hotelaria</span><h3>Pousada</h3><p class="small">Painel financeiro, CRM de reservas e precificador de tarifas por temporada.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="label">Vendas</span><h3>Agendamento automático</h3><p class="small">Lead escolhe o dia, recebe convite com Meet, pré-diagnóstico por e-mail e lembretes; o vendedor recebe o resumo.</p></div>
       <div class="card"><button type="button" class="mini-shot lb-one" data-src="img/p/flat.webp" data-cap="Painel de aluguel por temporada (dados de exemplo)"><img src="img/p/flat.webp" alt="Painel de aluguel por temporada" loading="lazy"></button><span class="label">Aluguel por temporada</span><h3>Flat na praia</h3><p class="small">Reservas, hóspedes e preços num painel, com o calendário do Airbnb e agente no WhatsApp.</p></div>
       <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></span><span class="label">Comercial</span><h3>Painéis de gestão</h3><p class="small">Market share, churn, caixa vendido × faturado e funis de vendas.</p></div>
-      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span><span class="label">Marketing</span><h3>Crescimento digital</h3><p class="small">Google Ads, perfil no Google e Instagram com publicação automática.</p></div>
+      <div class="card"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></span><span class="label">Marketing</span><h3>Crescimento digital</h3><p class="small">Google Ads, perfil no Google e Instagram com posts aprovados pelo dono e publicados por agente.</p></div>
     </div>
   </div>
   <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
@@ -599,12 +725,13 @@ body.lock{overflow:hidden}
 <!-- Para quem -->
 <section class="slide glow-bl" id="para-quem" aria-label="Para quem">
   <div class="inner">
-    <div class="headblock"><span class="eyebrow">08 — Para quem</span><h2 class="h2">Do pequeno negócio à grande operação</h2></div>
+    <div class="headblock"><span class="eyebrow">10 — Para quem</span><h2 class="h2">Do pequeno negócio à grande operação</h2></div>
     <div class="grid c3">
       <div class="card"><h3 class="serif">Pequenas empresas</h3><p class="small">Organize a casa: painel com os números essenciais, atendimento automático no WhatsApp e fim das planilhas manuais.</p></div>
       <div class="card" style="border-color:var(--accent-line)"><h3 class="serif">Médias empresas</h3><p class="small">Cresça sem inchar a equipe: sistemas integrados, automação entre áreas e indicadores por setor e gestor.</p></div>
       <div class="card"><h3 class="serif">Grandes empresas</h3><p class="small">Governança em escala: BI corporativo, agentes de IA por departamento e integração com ERPs.</p></div>
     </div>
+    <div class="pills"><span style="border-color:var(--accent);color:var(--fg)">Já rodando em: locadoras de carros e motos</span><span style="border-color:var(--accent);color:var(--fg)">pousadas e hotelaria</span><span style="border-color:var(--accent);color:var(--fg)">planos e serviços</span></div>
     <div class="pills"><span>Comercial</span><span>Financeiro</span><span>Operações e frota</span><span>RH e DP</span><span>Atendimento</span><span>Pós-venda</span><span>Diretoria</span></div>
   </div>
   <div class="foot"><span>DEDIKAR IA</span><span class="pg"></span></div>
@@ -615,7 +742,7 @@ body.lock{overflow:hidden}
   <div class="inner about">
     <div class="portrait"><img src="img/otto-gurgel.jpg" alt="Otto Gurgel, fundador da Dedikar IA" width="520" height="660"></div>
     <div class="headblock">
-      <span class="eyebrow">09 — Quem está por trás</span>
+      <span class="eyebrow">11 — Quem está por trás</span>
       <h2>Otto Gurgel</h2>
       <span class="label" style="font-size:clamp(13px,1.2vw,18px)">Fundador · Consultor em gestão e IA aplicada</span>
       <p class="body">Administrador de empresas, especialista em gestão empresarial e MBA em Inteligência Artificial para Negócios. São mais de 20 anos liderando operações, equipes comerciais e resultados, hoje dedicados a levar a IA para dentro das empresas de forma prática, mensurável e com os pés no chão.</p>
@@ -650,7 +777,7 @@ body.lock{overflow:hidden}
 <nav class="dots" id="dots" aria-label="Slides"></nav>
 <div class="ctrl" aria-label="Navegação da apresentação">
   <button type="button" id="prev" aria-label="Slide anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-  <span id="count">01 / 20</span>
+  <span id="count">01 / 24</span>
   <button type="button" id="next" aria-label="Próximo slide"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
 </div>
 
